@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>UzSend</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+<body class="is-preload">
+	<section id="header">
+		<header>
+					<span class="image avatar"><img src="{% static 'images/avatar.jpg' %}" alt="Bu yerda logotip bor" /></span>
+					<h1 id="logo"><a href="#">UzSend</a></h1>
+					<p>Web Sayt( Python, PHP, Html )<br>Telegram Bot( Python, PHP )</p>
+		</header>
+		<nav id="nav">
+			<ul>
+				<li><a href="#one" class="active">Biz Haqimizda</a></li>
+				<li><a href="#two">Bizning Xizmatlar</a></li>
+				<li><a href="#three">Bizning Ishlar</a></li>
+			</ul>
+		</nav>
+		<footer>
+			<ul class="icons">
+				<li><a href="https://t.me/uzsend" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+				<li><a href="https://youtube.com/channel/UClHV2pZZXEizoZwhqH-zq8A" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+				<li><a href="http://instagram.com/uzsend_official" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.tiktok.com/@uzsend" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>
+				<li><a href="https://twitter.com/UzSend" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="https://github.com/Uzsend" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</footer>
+	</section>
+    <div id="wrapper">
+		<div id="main">
+					<section id="one">
+						<div class="image main" data-position="center">
+							{% for b in banner%}
+								<img src="{{ b.rasim.url }}" />
+							{% endfor %}
+						</div>
+						<div class="container">
+							<header class="major">
+								<h2>UzSend</h2>
+								<p>Professional dasturchilar yig'ilgan jamoa!</p>
+							</header>
+							<p>Bizda Web sayitlarda BackEnd qismini yozish, Telegram botlarni tayyorlash, Online darslar Dasturlash asoslari ni o'rganib olishingiz mumkin! Bizning asosiy maqsadimiz yoshlani <b>It Texnalogialarga </b>qiziqishlarini oshirish va zamonavi avlodni taribiyalash dir!</p>
+						</div>
+					</section>
+
+					<section id="two">
+						<div class="container">
+							<h3>Bizning Xizmatlar</h3>
+							<p>Bizda Web sayitlarda Back End qismini yozish, Telegram botlarni tayyorlashda yordam beramiz!</p>
+							<ul class="feature-icons">
+								<li class="icon solid fa-code">Back End Dasturlash</li>
+								<li class="icon brands fa-telegram">Telegram Bot</li>
+								<li class="icon solid fa-video">Dasturlash kurslari</li>
+								<li class="icon solid fa-book">Online Darslar</li>
+							</ul>
+						</div>
+					</section>
+
+					<section id="three">
+						<div class="container">
+							<h3>Bizning Ishlar</h3>
+							<p>Bizda Web sayitlarda bekend qismini yozish, Telegram botlarni tayyorlash, Dasturlash kurslari, Online darslar</p>
+								<nav id="nav">
+									<ul>
+										<li><a href="{% url 'project'%}" class="active">Biz Boshqa Ishlar</a></li>
+									</ul>
+								</nav>
+							<div class="features">
+								{% for i in project%}
+                            		<article>
+                                		<a href="{{ i.link }}" class="image"><img src="{{ i.rasim.url }}" alt="bu yerda rasim bor!" /></a>
+                                		<div class="inner">
+                                			<h4>{{ i.nomi }}</h4>
+                                			<p>{{ i.tafsiya }}</p>
+                                		</div>
+                            		</article>
+                                {% endfor %}
+							</div>
+						</div>
+					</section>
+		</div>
+	</div>
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+		<script src="{% static 'assets/js/browser.min.js' %}"></script>
+		<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'assets/js/util.js' %}"></script>
+		<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

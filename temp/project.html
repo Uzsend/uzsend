@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Bizning Ishlar</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	</head>
+<body class="is-preload">
+    <div id="wrapper">
+		<div id="main">
+			<section id="three">
+				<div class="container">
+					<h3>Bizning Ishlar</h3>
+					<p>Bizda Web sayitlarda bekend qismini yozish, Telegram botlarni tayyorlash, Dasturlash kurslari, Online darslar</p>
+						<nav id="nav">
+							<ul>
+								<li><a href="{% url 'home' %}" class="active">Bosh saxifa</a></li>
+							</ul>
+						</nav>
+					<div class="features">
+						{% for i in project%}
+                            <article>
+                                <a href="{{ i.link }}" class="image"><img src="{{ i.rasim.url }}" alt="bu yerda rasim bor!" /></a>
+                                <div class="inner">
+                                	<h4>{{ i.nomi }}</h4>
+                                	<p>{{ i.tafsiya }}</p>
+                                </div>
+                            </article>
+                        {% endfor %}
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>     
+            <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+</body>
+</html>
